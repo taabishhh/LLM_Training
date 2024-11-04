@@ -13,6 +13,7 @@ object ConfigLoader {
   // Default input/output paths (can be overridden by terminal args)
   var inputPath: String = config.getString("app.inputPath")
   var outputPath: String = config.getString("app.outputPath")
+  var sparkMaster: String = config.getString("app.outputPath")
 
   // Function to override paths with command-line arguments
   def overridePaths(input: String, output: String): Unit = {

@@ -21,7 +21,7 @@ object TrainingWithSlidingWindowSpark {
     // Set up Spark configuration
     val sparkConf = new SparkConf()
       .setAppName("DL4J-Distributed-Training")
-      .setMaster("local[*]") // Use "yarn" or cluster-specific setting in production
+      .setMaster(ConfigLoader.sparkMaster)
 
     // Initialize Spark context
     val sc = new SparkContext(sparkConf)
@@ -46,7 +46,7 @@ object TrainingWithSlidingWindowSpark {
     val sparkModel = new SparkDl4jMultiLayer(sc, model, trainingMaster)
 
     // Set listeners to monitor the training progress
-    val listener = model.setListeners(new ScoreIterationListener(10))
+    model.setListeners(new ScoreIterationListener(10))
 
     // Train the model on the distributed RDD dataset
     sparkModel.fit(rddData)
@@ -72,7 +72,7 @@ object TrainingWithSlidingWindowSpark {
     sc.stop()
   }
 
-  def saveStatisticsToCSV(duration: Long, trainingStats: String, filePath: String): Unit = {
+  private def saveStatisticsToCSV(duration: Long, trainingStats: String, filePath: String): Unit = {
     val writer = new FileWriter(filePath)
     val csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT.withHeader("Training Duration (ms)", "Training Statistics"))
 

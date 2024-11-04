@@ -141,6 +141,7 @@ class MainAppTest extends AnyFlatSpec with Matchers with BeforeAndAfterAll {
     distinctDF.count() shouldEqual 1
   }
 
+
   override def afterAll(): Unit = {
     spark.stop()
   }

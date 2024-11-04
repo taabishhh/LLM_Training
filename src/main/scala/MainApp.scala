@@ -11,7 +11,7 @@ object MainApp {
     SlidingWindowSpark.run(args)
     logger.info("SlidingWindowSpark completed successfully!")
 
-    // Step 2: Train model using the generated sliding window data
+    // Step 2: Train model using the generated sliding window data and save the metrics
     logger.info("Running TrainingWithSlidingWindow for model training...")
     TrainingWithSlidingWindowSpark.run(args)
     logger.info("TrainingWithSlidingWindow completed successfully!")
