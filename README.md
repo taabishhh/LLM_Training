@@ -54,7 +54,7 @@ sbt assembly`
 Running the Project
 To execute the program:
 ```
-sbt run
+sbt run <inputPath> <outputPath>
 ```
 The application executes the following steps:
 
