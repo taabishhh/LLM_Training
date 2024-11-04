@@ -20,4 +20,12 @@ object ConfigLoader {
     inputPath = input
     outputPath = output
   }
+
+  // Print out the loaded configuration (for debugging purposes)
+  def printConfig(): Unit = {
+    println(s"App Name: $appName")
+    println(s"App Version: $appVersion")
+    println(s"Input Path: $inputPath")
+    println(s"Output Path: $outputPath")
+  }
 }

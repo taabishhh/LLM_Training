@@ -75,7 +75,7 @@ object TrainingWithSlidingWindowSpark {
 
   private def saveStatisticsToCSV(learningRate: String, duration: Long, trainingStats: String, filePath: String): Unit = {
     val writer = new FileWriter(filePath)
-    val csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT.withHeader("Learning Rate, Training Duration (ms)", "Training Statistics"))
+    val csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT.builder().setHeader("Learning Rate, Training Duration (ms)", "Training Statistics").build())
 
     csvPrinter.printRecord(learningRate, duration.toString, trainingStats)
     csvPrinter.flush()
@@ -84,7 +84,9 @@ object TrainingWithSlidingWindowSpark {
 
   def loadSlidingWindowsFromCSV(filePath: String): List[DataSet] = {
     val reader = new FileReader(filePath)
-    val csvParser = new CSVParser(reader, CSVFormat.DEFAULT.withDelimiter(','))
+    val csvParser = new CSVParser(reader, CSVFormat.DEFAULT.builder().setDelimiter(',').setIgnoreSurroundingSpaces(false) // Helps ignore spaces around delimiters
+      .setAllowMissingColumnNames(false) // Handles cases with missing columns
+      .setQuote('"').build())// Ensure quotes are correctly managed.build())
 
     val dataSets = csvParser.getRecords.asScala.toList.map { record =>
       // Parse tokens and embeddings from columns
