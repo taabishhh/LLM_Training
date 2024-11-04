@@ -59,9 +59,10 @@ sbt run <inputPath> <outputPath>
 The application executes the following steps:
 
 SlidingWindowSpark: Generates sliding window data with positional embeddings.
+
 TrainingWithSlidingWindowSpark: Utilizes sliding window data for model training.
 
-##Dependencies
+###Dependencies
 ```
 ThisBuild / version := "0.1.0-SNAPSHOT"
 ThisBuild / scalaVersion := "2.12.13"
@@ -93,7 +94,7 @@ Model Size and Parameters: Tracks model size and parameter count for resource ev
 Memory and CPU Utilization: Monitors system resource usage to assess load balancing and scalability.
 
 ###Repository Structure
-Exercises441/
+**Exercises441/
 ├── src/
 │   ├── main/
 │   │   └── scala/
