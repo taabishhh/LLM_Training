@@ -56,6 +56,7 @@ object TrainingWithSlidingWindowSpark {
     val trainingStats = sparkModel.getScore.toString
     logger.info(s"trainingStats: $trainingStats")
     val endTime = System.currentTimeMillis()
+    val learningRate = sparkModel.getNetwork.getLearningRate(0).toString
     val trainingDuration = endTime - startTime
 
     // Specify the file where the model will be saved
@@ -66,17 +67,17 @@ object TrainingWithSlidingWindowSpark {
     logger.info("Distributed training complete.")
 
     // Save training statistics and runtime measurements to CSV
-    saveStatisticsToCSV(trainingDuration, trainingStats, s"${ConfigLoader.outputPath}/training_statistics.csv")
+    saveStatisticsToCSV(learningRate, trainingDuration, trainingStats, s"${ConfigLoader.outputPath}/training_statistics.csv")
 
     // Stop Spark context
     sc.stop()
   }
 
-  private def saveStatisticsToCSV(duration: Long, trainingStats: String, filePath: String): Unit = {
+  private def saveStatisticsToCSV(learningRate: String, duration: Long, trainingStats: String, filePath: String): Unit = {
     val writer = new FileWriter(filePath)
-    val csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT.withHeader("Training Duration (ms)", "Training Statistics"))
+    val csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT.withHeader("Learning Rate, Training Duration (ms)", "Training Statistics"))
 
-    csvPrinter.printRecord(duration.toString, trainingStats)
+    csvPrinter.printRecord(learningRate, duration.toString, trainingStats)
     csvPrinter.flush()
     csvPrinter.close()
   }

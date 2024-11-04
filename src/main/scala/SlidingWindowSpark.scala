@@ -16,7 +16,6 @@ object SlidingWindowSpark {
   def run(args: Array[String]): Unit = {
     // Set up Spark configuration and context
     logger.info("SlidingWindowSpark implementing...")
-    try {
       val conf = new SparkConf().setAppName("Sliding Window Dataset").setMaster(ConfigLoader.sparkMaster)
       val spark = SparkSession.builder().config(conf).getOrCreate()
       val sc = new JavaSparkContext(spark.sparkContext)
@@ -112,12 +111,7 @@ object SlidingWindowSpark {
 
       // Stop the Spark context
       sc.stop()
-    } catch {
-      case e: SparkException =>
-        println(s"An error occurred while reading the CSV file: ${e.getMessage}. no such file")
-      case p: FileNotFoundException =>
-        println(s"An unexpected error occurred: ${p.getMessage}. no such file")
-    }
+
   }
 
   def createSlidingWindowsWithPositionalEmbedding(tokens: Array[String], embeddings: Array[Array[Double]], windowSize: Int): Seq[(Array[String], INDArray, String, INDArray)] = {
