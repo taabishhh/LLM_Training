@@ -106,7 +106,7 @@ Exercises441/
 └── build.sbt
 
 ### Link to Video Demonstration
-[Link to Video](<insert-video-link-here>)
+[Link to Video](https://youtu.be/O8bY4Lq_f7E)
 
 Notes
 Ensure Apache Hadoop, Spark, and DL4J libraries are configured and accessible. Update ConfigLoader for dataset paths, and monitor log outputs for metric collection.
