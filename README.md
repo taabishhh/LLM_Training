@@ -62,7 +62,7 @@ SlidingWindowSpark: Generates sliding window data with positional embeddings.
 
 TrainingWithSlidingWindowSpark: Utilizes sliding window data for model training.
 
-###Dependencies
+### Dependencies
 ```
 ThisBuild / version := "0.1.0-SNAPSHOT"
 ThisBuild / scalaVersion := "2.12.13"
@@ -85,16 +85,16 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.2.19" % "test"
 )
 ```
-###Performance Metrics Collection
-**During training, the following statistics are logged for analysis:
+### Performance Metrics Collection
+** During training, the following statistics are logged for analysis:
 
 Training Accuracy and Loss: Measures model convergence over epochs.
 Runtime Performance: Captures model execution time for different stages.
 Model Size and Parameters: Tracks model size and parameter count for resource evaluation.
 Memory and CPU Utilization: Monitors system resource usage to assess load balancing and scalability.
 
-###Repository Structure
-**Exercises441/
+### Repository Structure
+** Exercises441/
 ├── src/
 │   ├── main/
 │   │   └── scala/
