@@ -95,9 +95,10 @@ Memory and CPU Utilization: Monitors system resource usage to assess load balanc
 
 ### Repository Structure
 
-<img width="389" alt="Screenshot 2024-11-05 at 11 20 40 AM" src="https://github.com/user-attachments/assets/26aa1ec5-5cee-4f4a-bc49-f91ba06c71cf">
+<img width="394" alt="Screenshot 2024-11-05 at 11 35 22 AM" src="https://github.com/user-attachments/assets/f88ee70a-439b-4d4d-9adf-70c23bc8778b">
 
-
+Exercises441/ 
+|src/ main/ scala/ MainApp.scala SlidingWindowSpark.scala TrainingWithSlidingWindowSpark.scala resources/ application.conf README.md build.sbt
 ### Link to Video Demonstration
 [Link to Video](https://youtu.be/O8bY4Lq_f7E)
 
