@@ -86,7 +86,7 @@ libraryDependencies ++= Seq(
 )
 ```
 ### Performance Metrics Collection
-** During training, the following statistics are logged for analysis:
+During training, the following statistics are logged for analysis:
 
 Training Accuracy and Loss: Measures model convergence over epochs.
 Runtime Performance: Captures model execution time for different stages.
@@ -97,8 +97,6 @@ Memory and CPU Utilization: Monitors system resource usage to assess load balanc
 
 <img width="394" alt="Screenshot 2024-11-05 at 11 35 22 AM" src="https://github.com/user-attachments/assets/f88ee70a-439b-4d4d-9adf-70c23bc8778b">
 
-Exercises441/ 
-|src/ main/ scala/ MainApp.scala SlidingWindowSpark.scala TrainingWithSlidingWindowSpark.scala resources/ application.conf README.md build.sbt
 ### Link to Video Demonstration
 [Link to Video](https://youtu.be/O8bY4Lq_f7E)
 
