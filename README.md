@@ -94,25 +94,8 @@ Model Size and Parameters: Tracks model size and parameter count for resource ev
 Memory and CPU Utilization: Monitors system resource usage to assess load balancing and scalability.
 
 ### Repository Structure
-** Exercises441/
-├── src/
 
-│   ├── main/
-
-│   │   └── scala/
-│   │       ├── MainApp.scala
-
-│   │       ├── SlidingWindowSpark.scala
-
-│   │       └── TrainingWithSlidingWindowSpark.scala
-
-├── resources/
-
-│   └── application.conf
-
-├── README.md
-
-└── build.sbt
+<img width="389" alt="Screenshot 2024-11-05 at 11 20 40 AM" src="https://github.com/user-attachments/assets/26aa1ec5-5cee-4f4a-bc49-f91ba06c71cf">
 
 
 ### Link to Video Demonstration
