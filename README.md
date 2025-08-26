@@ -1,4 +1,4 @@
-# Homework2: NLP Training Pipeline with Apache Spark and DL4J
+# CS 441-Homework2 (UIC): NLP Training Pipeline with Apache Spark and DL4J
 
 **Author:** Taabish Sutriwala  
 **UIN:** 673379837  
